@@ -21,7 +21,7 @@ function setConcept(id, pushHash = true) {
     history.replaceState(null, "", `#${id}`);
   }
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0, behavior: pushHash ? "smooth" : "auto" });
 }
 
 conceptButtons.forEach((button) => {
@@ -33,6 +33,10 @@ conceptButtons.forEach((button) => {
 
 const initial = window.location.hash.replace("#", "") || "best-mix";
 setConcept(initial, false);
+requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
+window.addEventListener("load", () => {
+  setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 100);
+});
 
 if (window.lucide) {
   window.lucide.createIcons();

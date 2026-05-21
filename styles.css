@@ -155,6 +155,10 @@ img {
   flex: 0 0 auto;
 }
 
+.original-nav .site-logo {
+  width: 250px;
+}
+
 .wordmark {
   font-family: var(--font-serif);
   font-size: 1.28rem;
@@ -243,8 +247,30 @@ img {
 }
 
 .hero--original {
-  grid-template-columns: minmax(0, 1fr) 340px;
-  background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771095676619-V7MSIYR679JSMG49FC0I/unsplash-image-BeHRkALwXIw.jpg");
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.7fr);
+  align-items: center;
+  min-height: 70vh;
+  color: #17262d;
+  background: #f6f2e9;
+}
+
+.hero--original::before {
+  display: none;
+}
+
+.hero--original .hero__content {
+  color: #17262d;
+}
+
+.hero--original .hero__content p:not(.eyebrow) {
+  max-width: 720px;
+  color: #30444b;
+}
+
+.hero--original .button--secondary {
+  color: #17262d;
+  border-color: rgba(23, 38, 45, 0.32);
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .hero--investor {
@@ -515,6 +541,111 @@ h3 {
   background: #ffffff;
 }
 
+.original-image-stack {
+  display: grid;
+  gap: 16px;
+  align-self: center;
+}
+
+.original-image-stack img,
+.original-fit__media img,
+.original-founder__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.original-image-stack img:first-child {
+  aspect-ratio: 4 / 3;
+}
+
+.original-image-stack img:last-child {
+  aspect-ratio: 16 / 10;
+}
+
+.original-fit,
+.original-founder {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 44px;
+  padding: 76px 44px;
+}
+
+.original-fit {
+  background: #ffffff;
+}
+
+.original-fit__copy,
+.original-founder__copy {
+  max-width: 780px;
+}
+
+.original-fit__copy h2,
+.original-founder__copy h2,
+.original-testimonials h2 {
+  color: #17262d;
+}
+
+.original-fit__copy h3 {
+  margin-top: 28px;
+}
+
+.original-fit__copy p,
+.original-founder__copy p {
+  margin-bottom: 10px;
+  color: #3c5056;
+  line-height: 1.68;
+}
+
+.original-fit__copy .button,
+.original-founder__copy .button {
+  margin-top: 18px;
+}
+
+.original-testimonials {
+  padding: 76px 44px;
+  background: #f4f8f4;
+}
+
+.original-quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.original-quote-grid blockquote {
+  margin: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.original-quote-grid p {
+  color: #30444b;
+  line-height: 1.66;
+}
+
+.original-quote-grid cite {
+  display: block;
+  margin-top: 18px;
+  color: #1f4f46;
+  font-size: 0.92rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.original-founder {
+  background: #fffaf1;
+}
+
 .concept--investor .button--primary {
   color: #111819;
   background: #d8f05e;
@@ -724,6 +855,10 @@ h3 {
     padding: 52px 22px 28px;
   }
 
+  .hero--original {
+    align-items: start;
+  }
+
   h1 {
     font-size: 3rem;
   }
@@ -747,9 +882,18 @@ h3 {
   .faq-list,
   .tile-list,
   .process-list,
+  .original-fit,
+  .original-founder,
+  .original-quote-grid,
   .answer-list,
   .answer-list--columns {
     grid-template-columns: 1fr;
+  }
+
+  .original-fit,
+  .original-founder,
+  .original-testimonials {
+    padding: 56px 22px;
   }
 
   .proof-band {
