@@ -237,6 +237,16 @@ img {
   background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771195653406-UUSHLRXY0JM7PA3NMP6M/unsplash-image-DGa0LQ0yDPc.jpg");
 }
 
+.hero--best-mix {
+  grid-template-columns: minmax(0, 1fr) 340px;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771195653406-UUSHLRXY0JM7PA3NMP6M/unsplash-image-DGa0LQ0yDPc.jpg");
+}
+
+.hero--original {
+  grid-template-columns: minmax(0, 1fr) 340px;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771095676619-V7MSIYR679JSMG49FC0I/unsplash-image-BeHRkALwXIw.jpg");
+}
+
 .hero--investor {
   grid-template-columns: minmax(0, 1fr) 390px;
   background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771195259283-L5TDP4SF6F03N9AQMFNH/unsplash-image-jJnZg7vBfMs.jpg");
@@ -499,6 +509,12 @@ h3 {
   background: #f5f7f4;
 }
 
+.concept--best-mix,
+.concept--original {
+  color: #142126;
+  background: #ffffff;
+}
+
 .concept--investor .button--primary {
   color: #111819;
   background: #d8f05e;
@@ -656,7 +672,7 @@ h3 {
 
 @media (max-width: 980px) {
   :root {
-    --chooser-height: 128px;
+    --chooser-height: 136px;
   }
 
   .chooser {
@@ -698,6 +714,8 @@ h3 {
   }
 
   .hero,
+  .hero--original,
+  .hero--best-mix,
   .hero--advisory,
   .hero--investor,
   .hero--boutique {

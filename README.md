@@ -13,3 +13,11 @@ This repo contains only the static mockup preview files:
 - `script.js`
 
 The working SEO/AIO repo remains private.
+
+Current chooser entries:
+
+1. Original
+2. Best Mix
+3. Advisory
+4. Investor
+5. Boutique

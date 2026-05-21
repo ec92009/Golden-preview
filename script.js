@@ -31,7 +31,7 @@ conceptButtons.forEach((button) => {
   });
 });
 
-const initial = window.location.hash.replace("#", "") || "advisory";
+const initial = window.location.hash.replace("#", "") || "best-mix";
 setConcept(initial, false);
 
 if (window.lucide) {
