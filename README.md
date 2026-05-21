@@ -6,11 +6,15 @@ Preview URL:
 
 https://ec92009.github.io/Golden-preview/
 
+Current visible version: `v83.1`
+
 This repo contains only the static mockup preview files:
 
 - `index.html`
 - `styles.css`
 - `script.js`
+- `site-version.js`
+- `VERSION`
 
 The working SEO/AIO repo remains private.
 
