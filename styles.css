@@ -155,6 +155,18 @@ img {
   display: block;
 }
 
+.concept--live {
+  background: #ffffff;
+}
+
+.live-site-frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - var(--chooser-height));
+  border: 0;
+  background: #ffffff;
+}
+
 .site-nav {
   display: flex;
   align-items: center;

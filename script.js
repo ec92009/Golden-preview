@@ -32,11 +32,11 @@ conceptButtons.forEach((button) => {
 });
 
 window.addEventListener("hashchange", () => {
-  const next = window.location.hash.replace("#", "") || "seo";
+  const next = window.location.hash.replace("#", "") || "live";
   setConcept(next, false);
 });
 
-const initial = window.location.hash.replace("#", "") || "seo";
+const initial = window.location.hash.replace("#", "") || "live";
 setConcept(initial, false);
 requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
 window.addEventListener("load", () => {
