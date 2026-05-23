@@ -6,7 +6,7 @@ Preview URL:
 
 https://ec92009.github.io/Golden-preview/
 
-Current visible version: `v83.1`
+Current visible version: `v84.0`
 
 This repo contains only the static mockup preview files:
 
@@ -21,7 +21,8 @@ The working SEO/AIO repo remains private.
 Current chooser entries:
 
 1. Original
-2. Best Mix
-3. Advisory
-4. Investor
-5. Boutique
+2. SEO
+3. Look 1
+4. Look 2
+5. Look 3
+6. Sign Off
