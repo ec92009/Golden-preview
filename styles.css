@@ -543,6 +543,15 @@ h3 {
   line-height: 1.65;
 }
 
+.text-link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: #1f4f46;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .answer-section {
   background: #ffffff;
 }
