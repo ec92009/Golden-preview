@@ -930,6 +930,11 @@ h3 {
   color: #17262d;
 }
 
+.video-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
 
 @media (max-width: 980px) {
   :root {
