@@ -884,14 +884,20 @@ h3 {
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 24px;
   max-width: 1160px;
   margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
 }
 
 .video-card {
+  flex: 0 0 calc(33.333% - 16px);
+  min-width: 290px;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1048,9 +1054,8 @@ h3 {
     padding: 56px 22px;
   }
 
-  .video-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .video-card {
+    flex: 0 0 300px;
   }
 }
 
