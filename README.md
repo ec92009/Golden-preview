@@ -1,28 +1,28 @@
-# Golden Years Tax Strategy Preview
+# Golden Years Tax Strategy Static Mirror
 
-Public, sanitized website concept preview for Golden Years Tax Strategy.
+Public, sanitized static mirror for Golden Years Tax Strategy.
 
-Preview URL:
+Mirror URL:
 
 https://ec92009.github.io/Golden-preview/
 
-Current visible version: `v84.1`
+Production URL:
 
-This repo contains only the static mockup preview files:
+https://goldenyearstaxstrategy.com/
+
+Current visible version: `v93.0`
+
+This repo contains only the static production mirror files:
 
 - `index.html`
 - `styles.css`
 - `script.js`
 - `site-version.js`
-- `live-squarespace-home.html`
+- `privacy.html`
+- `terms.html`
+- `data-deletion.html`
+- `robots.txt`
+- `sitemap.xml`
 - `VERSION`
 
 The working SEO/AIO repo remains private.
-
-Current chooser entries:
-
-1. Live
-2. Look 1
-3. Look 2
-4. Look 3
-5. Sign Off
