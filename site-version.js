@@ -11,7 +11,7 @@
     const badge = document.querySelector(".site-version-badge") || document.createElement("span");
     badge.className = "site-version-badge";
     badge.textContent = `v${version}`;
-    badge.setAttribute("aria-label", `Site preview version ${version}`);
+    badge.setAttribute("aria-label", `Site version ${version}`);
     if (!badge.isConnected) document.body.appendChild(badge);
   };
 
