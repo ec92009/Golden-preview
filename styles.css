@@ -85,6 +85,18 @@ img {
   min-height: 100vh;
 }
 
+.site-version-badge {
+  position: fixed;
+  right: 6px;
+  bottom: 4px;
+  z-index: 50;
+  color: rgba(20, 33, 38, 0.38);
+  font-size: 9px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
 .site-nav {
   display: flex;
   align-items: center;

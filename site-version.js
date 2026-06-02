@@ -7,6 +7,14 @@
 
   if (!version) return;
 
+  const showVersionBadge = () => {
+    const badge = document.querySelector(".site-version-badge") || document.createElement("span");
+    badge.className = "site-version-badge";
+    badge.textContent = `v${version}`;
+    badge.setAttribute("aria-label", `Site preview version ${version}`);
+    if (!badge.isConnected) document.body.appendChild(badge);
+  };
+
   const versionedHref = (href) => {
     if (!href || href.startsWith("#")) return href;
     let url;
@@ -48,8 +56,12 @@
   window.goldenPreviewVersionInternalLinks = versionInternalLinks;
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => versionInternalLinks(), { once: true });
+    document.addEventListener("DOMContentLoaded", () => {
+      versionInternalLinks();
+      showVersionBadge();
+    }, { once: true });
   } else {
     versionInternalLinks();
+    showVersionBadge();
   }
 })();
