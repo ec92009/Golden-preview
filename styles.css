@@ -993,6 +993,8 @@ h3 {
 }
 
 .site-social a {
+  width: 36px;
+  height: 36px;
   color: #51666e;
   transition: color 0.2s ease;
   display: inline-flex;
@@ -1037,10 +1039,12 @@ h3 {
 
 .footer-social {
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 
 .footer-social a {
+  width: 44px;
+  height: 44px;
   color: rgba(255, 255, 255, 0.72);
   transition: color 0.2s ease;
   display: inline-flex;
