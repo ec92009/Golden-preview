@@ -10,7 +10,7 @@ Production URL:
 
 https://goldenyearstaxstrategy.com/
 
-Current visible version: `v93.0`
+Current visible version: `v94.0`
 
 This repo contains only the static production mirror files:
 
