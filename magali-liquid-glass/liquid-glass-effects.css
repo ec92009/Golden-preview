@@ -1,0 +1,177 @@
+.liquid-glass-page .nav-cta,
+.liquid-glass-page .button,
+.liquid-glass-page .hero__facts div,
+.liquid-glass-page .service-card,
+.liquid-glass-page .answer-item,
+.liquid-glass-page .fit-card,
+.liquid-glass-page .testimonial-card,
+.liquid-glass-page .video-card,
+.liquid-glass-page .founder-image,
+.liquid-glass-page .mobile-sticky-cta {
+  isolation: isolate;
+}
+
+.liquid-glass-page .nav-cta::after,
+.liquid-glass-page .button::after,
+.liquid-glass-page .hero__facts div::after,
+.liquid-glass-page .service-card::after,
+.liquid-glass-page .answer-item::after,
+.liquid-glass-page .fit-card::after,
+.liquid-glass-page .testimonial-card::after,
+.liquid-glass-page .video-card::after,
+.liquid-glass-page .mobile-sticky-cta::after {
+  content: "";
+  position: absolute;
+  top: -42%;
+  bottom: -42%;
+  left: -58%;
+  z-index: 2;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.52), transparent);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-120%) skewX(-18deg);
+}
+
+.liquid-glass-page.reveal-ready .liquid-appear.is-visible::after {
+  animation: glass-sheen 860ms ease var(--sheen-delay, 120ms) both;
+}
+
+.liquid-glass-page .nav-cta:active,
+.liquid-glass-page .button:active,
+.liquid-glass-page .mobile-sticky-cta:active {
+  transform: translateY(-1px) scale(0.985);
+}
+
+.liquid-glass-page .hero__facts div:active,
+.liquid-glass-page .service-card:active,
+.liquid-glass-page .answer-item:active,
+.liquid-glass-page .fit-card:active,
+.liquid-glass-page .testimonial-card:active,
+.liquid-glass-page .video-card:active,
+.liquid-glass-page .founder-image:active,
+.liquid-glass-page .is-tapping {
+  transform: translateY(-2px) scale(0.988);
+  box-shadow: 0 24px 70px rgba(42, 105, 103, 0.24);
+}
+
+.liquid-glass-page .nav-cta:active::after,
+.liquid-glass-page .button:active::after,
+.liquid-glass-page .hero__facts div:active::after,
+.liquid-glass-page .service-card:active::after,
+.liquid-glass-page .answer-item:active::after,
+.liquid-glass-page .fit-card:active::after,
+.liquid-glass-page .testimonial-card:active::after,
+.liquid-glass-page .video-card:active::after,
+.liquid-glass-page .mobile-sticky-cta:active::after,
+.liquid-glass-page .is-tapping::after {
+  animation: glass-sheen 620ms ease both;
+}
+
+.liquid-glass-page .service-grid {
+  counter-reset: service-card;
+}
+
+.liquid-glass-page .service-card {
+  counter-increment: service-card;
+}
+
+.liquid-glass-page .service-card h3::before {
+  content: counter(service-card, decimal-leading-zero);
+  display: block;
+  margin-bottom: 12px;
+  color: rgba(42, 105, 103, 0.62);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.liquid-glass-page .service-card.is-visible::after {
+  animation-duration: 980ms;
+}
+
+.mobile-sticky-cta {
+  position: fixed;
+  right: 18px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  left: 18px;
+  z-index: 45;
+  display: none;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(18, 63, 58, 0.86), rgba(42, 105, 103, 0.82));
+  box-shadow: 0 20px 52px rgba(14, 37, 41, 0.28);
+  backdrop-filter: blur(20px) saturate(155%);
+  font-weight: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(18px);
+  transition: opacity 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+
+.mobile-sticky-cta svg {
+  position: relative;
+  z-index: 3;
+  width: 19px;
+  height: 19px;
+}
+
+.mobile-sticky-cta span {
+  position: relative;
+  z-index: 3;
+}
+
+.mobile-sticky-cta.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.liquid-glass-page.has-mobile-cta .site-version-badge {
+  bottom: calc(84px + env(safe-area-inset-bottom));
+}
+
+@keyframes glass-sheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%) skewX(-18deg);
+  }
+
+  28% {
+    opacity: 0.72;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(420%) skewX(-18deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .mobile-sticky-cta {
+    display: flex;
+  }
+
+  .liquid-glass-page .service-card h3::before {
+    margin-bottom: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-glass-page.reveal-ready .liquid-appear.is-visible::after,
+  .liquid-glass-page .is-tapping::after,
+  .liquid-glass-page :active::after {
+    animation: none;
+  }
+
+  .mobile-sticky-cta {
+    transition: none;
+  }
+}
