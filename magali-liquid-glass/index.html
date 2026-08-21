@@ -23,13 +23,13 @@
     <meta name="theme-color" content="#123a3f" />
     <link rel="preconnect" href="https://images.squarespace-cdn.com" />
     <link rel="preconnect" href="https://unpkg.com" />
-    <link rel="stylesheet" href="../styles.css?v=107.2" />
-    <link rel="stylesheet" href="liquid-glass.css?v=107.2" />
-    <link rel="stylesheet" href="liquid-glass-effects.css?v=107.2" />
+    <link rel="stylesheet" href="../styles.css?v=174.1" />
+    <link rel="stylesheet" href="liquid-glass.css?v=174.1" />
+    <link rel="stylesheet" href="liquid-glass-effects.css?v=174.1" />
     <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-    <script defer src="../script.js?v=107.2"></script>
-    <script defer src="liquid-glass.js?v=107.2"></script>
-    <script defer src="../site-version.js?v=107.2"></script>
+    <script defer src="../script.js?v=174.1"></script>
+    <script defer src="liquid-glass.js?v=174.1"></script>
+    <script defer src="../site-version.js?v=174.1"></script>
   </head>
   <body class="standalone-page liquid-glass-page">
     <main>
@@ -57,6 +57,9 @@
             <i data-lucide="calendar-check" aria-hidden="true"></i>
             Book Now!
           </a>
+          <button class="settings-gear" type="button" data-settings-toggle aria-label="Open display settings" aria-controls="settings-panel" aria-expanded="false" title="Display settings">
+            <i data-lucide="settings" aria-hidden="true"></i>
+          </button>
         </header>
 
         <section class="hero hero--best-mix">
@@ -311,6 +314,44 @@
         </footer>
       </article>
     </main>
+    <button class="settings-backdrop" type="button" data-settings-backdrop aria-label="Close display settings" hidden></button>
+    <aside class="settings-panel" id="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title" aria-describedby="settings-description" hidden>
+      <div class="settings-panel__header">
+        <div>
+          <p class="eyebrow">Review settings</p>
+          <h2 id="settings-title">Display</h2>
+        </div>
+        <button class="settings-close" type="button" data-settings-close aria-label="Close display settings" title="Close display settings">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="settings-panel__description" id="settings-description">Tune the preview surface for your screen and lighting.</p>
+      <div class="settings-group">
+        <span class="settings-label">Theme</span>
+        <div class="settings-choice-row" role="radiogroup" aria-label="Theme">
+          <label class="settings-choice">
+            <input type="radio" name="liquid-glass-theme" value="day" data-theme-choice />
+            <span>Day</span>
+          </label>
+          <label class="settings-choice">
+            <input type="radio" name="liquid-glass-theme" value="night" data-theme-choice />
+            <span>Night</span>
+          </label>
+        </div>
+      </div>
+      <label class="settings-range" for="glass-opacity">
+        <span><strong>Glass opacity</strong><output data-opacity-output for="glass-opacity">64%</output></span>
+        <input id="glass-opacity" type="range" min="42" max="82" step="1" value="64" data-glass-opacity />
+      </label>
+      <label class="settings-range" for="glass-blur">
+        <span><strong>Glass blur</strong><output data-blur-output for="glass-blur">20px</output></span>
+        <input id="glass-blur" type="range" min="12" max="32" step="1" value="20" data-glass-blur />
+      </label>
+      <p class="settings-about">Review build <strong data-settings-version>v174.1</strong></p>
+    </aside>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top" title="Back to top" hidden>
+      <i data-lucide="arrow-up" aria-hidden="true"></i>
+    </button>
     <a class="mobile-sticky-cta" href="https://calendly.com/magalidomingue/initial-consultation" target="_blank" rel="noreferrer">
       <i data-lucide="calendar-check" aria-hidden="true"></i>
       <span>Book Now!</span>
