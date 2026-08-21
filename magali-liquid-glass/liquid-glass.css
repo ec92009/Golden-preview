@@ -495,6 +495,8 @@ body.liquid-glass-page {
 
 .liquid-glass-page[data-theme="night"] {
   color-scheme: dark;
+  --glass-teal: #8fe1c7;
+  --glass-gold: #f2c96b;
   --glass-ink: #edf9f4;
   --glass-paper: rgba(17, 42, 45, var(--glass-alpha));
   --glass-paper-strong: rgba(24, 55, 58, var(--glass-strong-alpha));
