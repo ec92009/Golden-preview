@@ -131,10 +131,19 @@
     const settings = loadSettings();
 
     const applySettings = () => {
+      const opacityRatio = settings.opacity / 100;
+      const sectionAlpha = 0.2 + opacityRatio * 0.46;
+      const sectionStrongAlpha = 0.34 + opacityRatio * 0.58;
+      const factAlpha = 0.06 + opacityRatio * 0.16;
+      const factHoverAlpha = 0.12 + opacityRatio * 0.2;
       document.body.dataset.theme = settings.theme;
-      document.documentElement.style.setProperty("--glass-alpha", (settings.opacity / 100).toFixed(2));
-      document.documentElement.style.setProperty("--glass-strong-alpha", Math.min(0.92, settings.opacity / 100 + 0.14).toFixed(2));
-      document.documentElement.style.setProperty("--glass-nav-alpha", Math.min(0.88, settings.opacity / 100 + 0.08).toFixed(2));
+      document.documentElement.style.setProperty("--glass-alpha", opacityRatio.toFixed(2));
+      document.documentElement.style.setProperty("--glass-strong-alpha", Math.min(0.92, opacityRatio + 0.14).toFixed(2));
+      document.documentElement.style.setProperty("--glass-nav-alpha", Math.min(0.88, opacityRatio + 0.08).toFixed(2));
+      document.documentElement.style.setProperty("--glass-section-alpha", sectionAlpha.toFixed(2));
+      document.documentElement.style.setProperty("--glass-section-strong-alpha", Math.min(0.86, sectionStrongAlpha).toFixed(2));
+      document.documentElement.style.setProperty("--glass-fact-alpha", factAlpha.toFixed(2));
+      document.documentElement.style.setProperty("--glass-fact-hover-alpha", factHoverAlpha.toFixed(2));
       document.documentElement.style.setProperty("--glass-blur", `${settings.blur}px`);
       themeChoices.forEach((choice) => {
         choice.checked = choice.value === settings.theme;
