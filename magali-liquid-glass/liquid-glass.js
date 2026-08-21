@@ -229,6 +229,7 @@
     button.addEventListener("click", () => {
       const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
       window.scrollTo({ top: 0, behavior });
+      document.querySelector("main")?.focus({ preventScroll: true });
     });
     window.addEventListener("scroll", updateVisibility, { passive: true });
     window.addEventListener("resize", updateVisibility);
