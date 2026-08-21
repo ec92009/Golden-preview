@@ -40,6 +40,7 @@
     ".founder-copy",
     ".video-card",
     ".video-cta",
+    ".preview-link-card",
     ".concept-footer .footer-content",
   ];
 
@@ -53,6 +54,7 @@
     ".testimonial-card",
     ".founder-image",
     ".video-card",
+    ".preview-link-card",
     ".mobile-sticky-cta",
   ].join(",");
 

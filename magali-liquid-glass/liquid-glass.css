@@ -589,3 +589,205 @@ body.liquid-glass-page {
     transform: none;
   }
 }
+
+/* August refresh review additions: intentionally scoped to this non-production route. */
+.review-banner {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 44px;
+  color: #173b3c;
+  border-bottom: 1px solid rgba(200, 150, 59, 0.38);
+  background: linear-gradient(90deg, rgba(255, 246, 218, 0.94), rgba(237, 249, 244, 0.86));
+  box-shadow: 0 10px 28px rgba(14, 37, 41, 0.08);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+}
+
+.review-banner__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  line-height: 1.45;
+}
+
+.review-banner__content strong {
+  color: #7b5418;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.review-banner__content span {
+  color: #466067;
+  font-size: 0.9rem;
+}
+
+.review-banner__badge,
+.review-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: #7b5418;
+  border: 1px solid rgba(200, 150, 59, 0.46);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.44);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.review-banner__badge {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+}
+
+.review-chip {
+  margin-bottom: 12px;
+  padding: 6px 8px;
+}
+
+.liquid-glass-page .service-card--featured {
+  border-color: rgba(200, 150, 59, 0.64);
+  background: linear-gradient(145deg, rgba(255, 251, 234, 0.78), var(--glass-paper));
+}
+
+.liquid-glass-page .service-card--featured svg {
+  color: var(--glass-gold);
+}
+
+.preview-links-section {
+  padding: 76px 44px;
+  border-top: 1px solid rgba(255, 255, 255, 0.62);
+  background: linear-gradient(135deg, rgba(255, 248, 235, var(--glass-section-strong-alpha)), rgba(239, 248, 245, var(--glass-section-alpha)));
+}
+
+.preview-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.preview-link-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 28px;
+  color: var(--glass-ink);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass-paper);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  transition: border-color 200ms ease, box-shadow 220ms ease, transform 220ms ease, background 220ms ease;
+}
+
+.preview-link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 42%, rgba(255, 255, 255, 0.16));
+  pointer-events: none;
+}
+
+.preview-link-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.preview-link-card:hover,
+.preview-link-card:focus-visible {
+  color: var(--glass-ink);
+  border-color: rgba(42, 105, 103, 0.48);
+  background: var(--glass-paper-strong);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-6px);
+}
+
+.preview-link-card:focus-visible {
+  outline: 3px solid rgba(246, 207, 126, 0.88);
+  outline-offset: 4px;
+}
+
+.preview-link-card h3 {
+  margin: 0 0 12px;
+  color: var(--glass-ink);
+}
+
+.preview-link-card p {
+  margin: 0;
+  color: #40595f;
+  line-height: 1.65;
+}
+
+.preview-link-card .text-link {
+  margin-top: 22px;
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner {
+  color: var(--glass-ink);
+  border-bottom-color: rgba(242, 201, 107, 0.34);
+  background: linear-gradient(90deg, rgba(47, 48, 38, 0.92), rgba(15, 54, 55, 0.9));
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner__content strong,
+.liquid-glass-page[data-theme="night"] .review-banner__badge,
+.liquid-glass-page[data-theme="night"] .review-chip {
+  color: var(--glass-gold);
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner__content span,
+.liquid-glass-page[data-theme="night"] .preview-link-card p {
+  color: rgba(231, 245, 241, 0.8);
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner__badge,
+.liquid-glass-page[data-theme="night"] .review-chip {
+  border-color: rgba(242, 201, 107, 0.34);
+  background: rgba(8, 27, 31, 0.36);
+}
+
+.liquid-glass-page[data-theme="night"] .preview-links-section {
+  background: rgba(7, 25, 29, var(--glass-section-alpha));
+}
+
+.liquid-glass-page[data-theme="night"] .preview-link-card h3,
+.liquid-glass-page[data-theme="night"] .preview-link-card {
+  color: var(--glass-ink);
+}
+
+@media (min-width: 981px) {
+  .liquid-glass-page .service-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .review-banner,
+  .preview-links-section {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .review-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .preview-link-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -7,6 +7,7 @@
 .liquid-glass-page .testimonial-card,
 .liquid-glass-page .video-card,
 .liquid-glass-page .founder-image,
+.liquid-glass-page .preview-link-card,
 .liquid-glass-page .mobile-sticky-cta {
   isolation: isolate;
 }
@@ -19,6 +20,7 @@
 .liquid-glass-page .fit-card::after,
 .liquid-glass-page .testimonial-card::after,
 .liquid-glass-page .video-card::after,
+.liquid-glass-page .preview-link-card::after,
 .liquid-glass-page .mobile-sticky-cta::after {
   content: "";
   position: absolute;
@@ -50,6 +52,7 @@
 .liquid-glass-page .testimonial-card:active,
 .liquid-glass-page .video-card:active,
 .liquid-glass-page .founder-image:active,
+.liquid-glass-page .preview-link-card:active,
 .liquid-glass-page .is-tapping {
   transform: translateY(-2px) scale(0.988);
   box-shadow: 0 24px 70px rgba(42, 105, 103, 0.24);
@@ -63,6 +66,7 @@
 .liquid-glass-page .fit-card:active::after,
 .liquid-glass-page .testimonial-card:active::after,
 .liquid-glass-page .video-card:active::after,
+.liquid-glass-page .preview-link-card:active::after,
 .liquid-glass-page .mobile-sticky-cta:active::after,
 .liquid-glass-page .is-tapping::after {
   animation: glass-sheen 620ms ease both;
