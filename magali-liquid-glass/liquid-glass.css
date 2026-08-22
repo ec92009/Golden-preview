@@ -80,8 +80,7 @@ body.liquid-glass-page {
 
 .liquid-glass-page .hero {
   min-height: 76vh;
-  background-image: url("assets/magali-with-puppy.jpg");
-  background-position: center 27%;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771195653406-UUSHLRXY0JM7PA3NMP6M/unsplash-image-DGa0LQ0yDPc.jpg");
 }
 
 .liquid-glass-page .hero::before {
