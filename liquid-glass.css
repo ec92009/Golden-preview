@@ -1,0 +1,793 @@
+:root {
+  --glass-ink: #10252a;
+  --glass-teal: #2a6967;
+  --glass-gold: #c8963b;
+  --glass-rose: #9f4647;
+  --glass-alpha: 0.64;
+  --glass-strong-alpha: 0.78;
+  --glass-nav-alpha: 0.72;
+  --glass-section-alpha: 0.49;
+  --glass-section-strong-alpha: 0.71;
+  --glass-fact-alpha: 0.16;
+  --glass-fact-hover-alpha: 0.22;
+  --glass-blur: 20px;
+  --glass-paper: rgba(255, 255, 255, var(--glass-alpha));
+  --glass-paper-strong: rgba(255, 255, 255, var(--glass-strong-alpha));
+  --glass-border: rgba(255, 255, 255, 0.58);
+  --glass-shadow: 0 22px 58px rgba(14, 37, 41, 0.16);
+  --glass-shadow-hover: 0 28px 76px rgba(14, 37, 41, 0.22);
+}
+
+body.liquid-glass-page {
+  color: var(--glass-ink);
+  background: linear-gradient(180deg, #f8fcfa 0%, #eef7f4 42%, #fff9ef 72%, #f5fbfb 100%);
+}
+
+.concept--liquid-glass {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.58), rgba(236, 246, 244, 0.82) 40%, rgba(255, 249, 239, 0.72));
+}
+
+.liquid-glass-page .site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding-right: 92px;
+  background: rgba(252, 255, 253, var(--glass-nav-alpha));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.64);
+  box-shadow: 0 12px 36px rgba(14, 37, 41, 0.1);
+  backdrop-filter: blur(var(--glass-blur)) saturate(155%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(155%);
+}
+
+.liquid-glass-page .nav-cta,
+.liquid-glass-page .button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(18, 63, 58, 0.18);
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+
+.liquid-glass-page .nav-cta::before,
+.liquid-glass-page .button::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 44%, rgba(255, 255, 255, 0.18));
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.liquid-glass-page .nav-cta:hover,
+.liquid-glass-page .button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(18, 63, 58, 0.24);
+}
+
+.liquid-glass-page .button--primary,
+.liquid-glass-page .nav-cta {
+  background: linear-gradient(135deg, #123f3a, #2b6d67);
+}
+
+.liquid-glass-page .button--secondary {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+}
+
+.liquid-glass-page .hero {
+  min-height: 76vh;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/65f25e33faa411669ef675bb/1771195653406-UUSHLRXY0JM7PA3NMP6M/unsplash-image-DGa0LQ0yDPc.jpg");
+}
+
+.liquid-glass-page .hero::before {
+  background: linear-gradient(90deg, rgba(8, 24, 29, 0.82), rgba(12, 52, 58, 0.46) 55%, rgba(242, 210, 151, 0.12));
+}
+
+.liquid-glass-page .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.16), transparent 31%, rgba(255, 255, 255, 0.08) 58%, transparent 76%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.liquid-glass-page .hero > * {
+  z-index: 2;
+}
+
+.liquid-glass-page .hero__content {
+  text-shadow: 0 3px 18px rgba(2, 15, 18, 0.42);
+}
+
+.liquid-glass-page .eyebrow {
+  color: var(--glass-gold);
+}
+
+.liquid-glass-page .hero .eyebrow {
+  color: #f6cf7e;
+}
+
+.liquid-glass-page .hero__facts div,
+.liquid-glass-page .service-card,
+.liquid-glass-page .answer-item,
+.liquid-glass-page .fit-card,
+.liquid-glass-page .testimonial-card,
+.liquid-glass-page .video-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass-paper);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  transition: border-color 200ms ease, box-shadow 220ms ease, transform 220ms ease, background 220ms ease;
+}
+
+.liquid-glass-page .hero__facts div::before,
+.liquid-glass-page .service-card::before,
+.liquid-glass-page .answer-item::before,
+.liquid-glass-page .fit-card::before,
+.liquid-glass-page .testimonial-card::before,
+.liquid-glass-page .video-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.52), transparent 42%, rgba(255, 255, 255, 0.18));
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.liquid-glass-page .hero__facts div > *,
+.liquid-glass-page .service-card > *,
+.liquid-glass-page .answer-item > *,
+.liquid-glass-page .fit-card > *,
+.liquid-glass-page .testimonial-card > *,
+.liquid-glass-page .video-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.liquid-glass-page .hero__facts div {
+  color: #ffffff;
+  background: rgba(255, 255, 255, var(--glass-fact-alpha));
+  border-color: rgba(255, 255, 255, 0.36);
+}
+
+.liquid-glass-page .hero__facts div:hover,
+.liquid-glass-page .service-card:hover,
+.liquid-glass-page .answer-item:hover,
+.liquid-glass-page .fit-card:hover,
+.liquid-glass-page .testimonial-card:hover,
+.liquid-glass-page .video-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(42, 105, 103, 0.36);
+  background: var(--glass-paper-strong);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.liquid-glass-page .hero__facts div:hover {
+  background: rgba(255, 255, 255, var(--glass-fact-hover-alpha));
+  border-color: rgba(246, 207, 126, 0.58);
+}
+
+.liquid-glass-page .band--light,
+.liquid-glass-page .answer-section,
+.liquid-glass-page .fit-section,
+.liquid-glass-page .testimonials-section,
+.liquid-glass-page .founder-section,
+.liquid-glass-page .video-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.62);
+  background: transparent;
+}
+
+.liquid-glass-page .band--light {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, var(--glass-section-alpha)), rgba(238, 247, 244, var(--glass-section-strong-alpha)));
+}
+
+.liquid-glass-page .answer-section {
+  background: rgba(255, 255, 255, var(--glass-section-alpha));
+}
+
+.liquid-glass-page .fit-section {
+  background: linear-gradient(180deg, rgba(245, 251, 249, var(--glass-section-strong-alpha)), rgba(255, 248, 239, var(--glass-section-alpha)));
+}
+
+.liquid-glass-page .testimonials-section {
+  background: linear-gradient(180deg, rgba(239, 248, 245, var(--glass-section-strong-alpha)), rgba(250, 252, 251, var(--glass-section-alpha)));
+}
+
+.liquid-glass-page .founder-section {
+  background: linear-gradient(115deg, rgba(255, 250, 241, var(--glass-section-strong-alpha)), rgba(237, 247, 245, var(--glass-section-alpha)));
+}
+
+.liquid-glass-page .section-heading p:not(.eyebrow),
+.liquid-glass-page .service-card p,
+.liquid-glass-page .answer-item p,
+.liquid-glass-page .fit-card li,
+.liquid-glass-page .testimonial-card p,
+.liquid-glass-page .founder-copy p,
+.liquid-glass-page .video-card h4 {
+  color: #40595f;
+}
+
+.liquid-glass-page .service-card svg,
+.liquid-glass-page .fit-card--yes span,
+.liquid-glass-page .testimonial-card cite,
+.liquid-glass-page .text-link {
+  color: var(--glass-teal);
+}
+
+.liquid-glass-page .fit-card--yes {
+  border-left-color: var(--glass-teal);
+}
+
+.liquid-glass-page .fit-card--no {
+  border-left-color: var(--glass-rose);
+}
+
+.liquid-glass-page .fit-card--no span {
+  color: var(--glass-rose);
+}
+
+.liquid-glass-page .founder-image img,
+.liquid-glass-page .video-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  box-shadow: var(--glass-shadow);
+}
+
+.liquid-glass-page .founder-image {
+  transition: transform 220ms ease;
+}
+
+.liquid-glass-page .founder-image:hover {
+  transform: translateY(-6px);
+}
+
+.liquid-glass-page .video-card {
+  padding: 16px;
+}
+
+.liquid-glass-page .video-wrapper {
+  margin-bottom: 2px;
+}
+
+.liquid-glass-page .concept-footer {
+  background: linear-gradient(135deg, rgba(13, 35, 40, 0.96), rgba(20, 61, 57, 0.96));
+}
+
+.liquid-glass-page .site-version-badge {
+  background: rgba(16, 37, 42, 0.72);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+}
+
+.liquid-glass-page.reveal-ready .liquid-appear {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 680ms ease, transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--appear-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.liquid-glass-page.reveal-ready .liquid-appear.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.liquid-glass-page.settings-open {
+  overflow: hidden;
+}
+
+.settings-gear,
+.settings-close,
+.back-to-top {
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  color: #ffffff;
+  background: rgba(18, 63, 58, 0.84);
+  box-shadow: 0 14px 34px rgba(14, 37, 41, 0.22);
+  backdrop-filter: blur(var(--glass-blur)) saturate(155%);
+  cursor: pointer;
+}
+
+.settings-gear {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 75;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.settings-gear:hover,
+.settings-close:hover,
+.back-to-top:hover {
+  background: rgba(42, 105, 103, 0.94);
+  box-shadow: 0 18px 42px rgba(14, 37, 41, 0.28);
+  transform: translateY(-2px);
+}
+
+.settings-gear:focus-visible,
+.settings-close:focus-visible,
+.back-to-top:focus-visible,
+.settings-choice:focus-within,
+.settings-range input:focus-visible {
+  outline: 3px solid rgba(246, 207, 126, 0.88);
+  outline-offset: 3px;
+}
+
+.settings-gear svg,
+.settings-close svg,
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+.settings-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 68;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: rgba(8, 24, 29, 0.28);
+  backdrop-filter: blur(3px);
+  cursor: default;
+}
+
+.settings-backdrop[hidden],
+.settings-panel[hidden],
+.back-to-top[hidden] {
+  display: none;
+}
+
+.settings-panel {
+  position: fixed;
+  top: 76px;
+  right: 18px;
+  z-index: 80;
+  width: min(360px, calc(100vw - 36px));
+  max-height: calc(100vh - 94px);
+  overflow: auto;
+  padding: 24px;
+  color: var(--glass-ink);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass-paper-strong);
+  box-shadow: 0 30px 80px rgba(14, 37, 41, 0.28);
+  backdrop-filter: blur(var(--glass-blur)) saturate(155%);
+}
+
+.settings-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.settings-panel .eyebrow {
+  margin: 0 0 4px;
+  color: var(--glass-teal);
+}
+
+.settings-panel h2 {
+  margin: 0;
+  color: var(--glass-ink);
+  font-size: 1.65rem;
+}
+
+.settings-close {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.settings-panel__description,
+.settings-about {
+  color: #40595f;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.settings-panel__description {
+  margin: 18px 0 22px;
+}
+
+.settings-group,
+.settings-range {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.settings-label,
+.settings-range > span,
+.settings-about {
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.settings-range > span {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.settings-range output {
+  color: var(--glass-teal);
+  font-variant-numeric: tabular-nums;
+}
+
+.settings-choice-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.settings-choice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 10px;
+  color: var(--glass-ink);
+  border: 1px solid rgba(42, 105, 103, 0.24);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.26);
+  cursor: pointer;
+}
+
+.settings-choice:has(input:checked) {
+  border-color: rgba(42, 105, 103, 0.72);
+  background: rgba(42, 105, 103, 0.14);
+}
+
+.settings-choice input {
+  accent-color: var(--glass-teal);
+}
+
+.settings-range input {
+  width: 100%;
+  accent-color: var(--glass-teal);
+  cursor: pointer;
+}
+
+.settings-about {
+  margin: 24px 0 0;
+  color: var(--glass-teal);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 56px;
+  z-index: 46;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 220ms ease, transform 220ms ease, background 180ms ease, box-shadow 220ms ease;
+}
+
+.back-to-top:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.liquid-glass-page[data-theme="night"] {
+  color-scheme: dark;
+  --glass-teal: #8fe1c7;
+  --glass-gold: #f2c96b;
+  --glass-ink: #edf9f4;
+  --glass-paper: rgba(17, 42, 45, var(--glass-alpha));
+  --glass-paper-strong: rgba(24, 55, 58, var(--glass-strong-alpha));
+  --glass-border: rgba(220, 255, 244, 0.2);
+  --glass-shadow: 0 22px 58px rgba(2, 15, 18, 0.32);
+  --glass-shadow-hover: 0 28px 76px rgba(2, 15, 18, 0.44);
+  background: linear-gradient(180deg, #10282d 0%, #153a3c 42%, #203c3a 72%, #10292d 100%);
+}
+
+.liquid-glass-page[data-theme="day"] {
+  color-scheme: light;
+}
+
+.liquid-glass-page[data-theme="night"] .concept--liquid-glass {
+  color: var(--glass-ink);
+}
+
+.liquid-glass-page[data-theme="night"] .site-logo img {
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+
+.liquid-glass-page[data-theme="night"] .concept--liquid-glass {
+  background: linear-gradient(120deg, rgba(16, 40, 45, 0.76), rgba(19, 61, 61, 0.86) 40%, rgba(48, 47, 40, 0.72));
+}
+
+.liquid-glass-page[data-theme="night"] .site-nav {
+  background: rgba(8, 27, 31, var(--glass-nav-alpha));
+  border-bottom-color: rgba(220, 255, 244, 0.14);
+}
+
+.liquid-glass-page[data-theme="night"] .site-nav nav,
+.liquid-glass-page[data-theme="night"] .settings-panel__description,
+.liquid-glass-page[data-theme="night"] .section-heading p:not(.eyebrow),
+.liquid-glass-page[data-theme="night"] .service-card p,
+.liquid-glass-page[data-theme="night"] .answer-item p,
+.liquid-glass-page[data-theme="night"] .fit-card li,
+.liquid-glass-page[data-theme="night"] .testimonial-card p,
+.liquid-glass-page[data-theme="night"] .founder-copy p,
+.liquid-glass-page[data-theme="night"] .video-card h4 {
+  color: rgba(231, 245, 241, 0.8);
+}
+
+.liquid-glass-page[data-theme="night"] .band--light,
+.liquid-glass-page[data-theme="night"] .answer-section,
+.liquid-glass-page[data-theme="night"] .fit-section,
+.liquid-glass-page[data-theme="night"] .testimonials-section,
+.liquid-glass-page[data-theme="night"] .founder-section,
+.liquid-glass-page[data-theme="night"] .video-section {
+  background: rgba(7, 25, 29, var(--glass-section-alpha));
+}
+
+.liquid-glass-page[data-theme="night"] .settings-choice {
+  border-color: rgba(220, 255, 244, 0.2);
+  background: rgba(8, 27, 31, 0.28);
+}
+
+.liquid-glass-page[data-theme="night"] .settings-choice:has(input:checked) {
+  border-color: rgba(126, 218, 191, 0.72);
+  background: rgba(126, 218, 191, 0.14);
+}
+
+.liquid-glass-page.has-mobile-cta .back-to-top {
+  bottom: calc(148px + env(safe-area-inset-bottom));
+}
+
+@media (max-width: 980px) {
+  .liquid-glass-page .site-nav {
+    align-items: flex-start;
+    padding-right: 88px;
+  }
+
+  .liquid-glass-page .hero {
+    min-height: 70vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-glass-page *,
+  .liquid-glass-page *::before,
+  .liquid-glass-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .liquid-glass-page.reveal-ready .liquid-appear {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* August refresh review additions: intentionally scoped to this non-production route. */
+.review-banner {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 44px;
+  color: #173b3c;
+  border-bottom: 1px solid rgba(200, 150, 59, 0.38);
+  background: linear-gradient(90deg, rgba(255, 246, 218, 0.94), rgba(237, 249, 244, 0.86));
+  box-shadow: 0 10px 28px rgba(14, 37, 41, 0.08);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+}
+
+.review-banner__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  line-height: 1.45;
+}
+
+.review-banner__content strong {
+  color: #7b5418;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.review-banner__content span {
+  color: #466067;
+  font-size: 0.9rem;
+}
+
+.review-banner__badge,
+.review-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: #7b5418;
+  border: 1px solid rgba(200, 150, 59, 0.46);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.44);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.review-banner__badge {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+}
+
+.review-chip {
+  margin-bottom: 12px;
+  padding: 6px 8px;
+}
+
+.liquid-glass-page .service-card--featured {
+  border-color: rgba(200, 150, 59, 0.64);
+  background: linear-gradient(145deg, rgba(255, 251, 234, 0.78), var(--glass-paper));
+}
+
+.liquid-glass-page .service-card--featured svg {
+  color: var(--glass-gold);
+}
+
+.preview-links-section {
+  padding: 76px 44px;
+  border-top: 1px solid rgba(255, 255, 255, 0.62);
+  background: linear-gradient(135deg, rgba(255, 248, 235, var(--glass-section-strong-alpha)), rgba(239, 248, 245, var(--glass-section-alpha)));
+}
+
+.preview-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.preview-link-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 28px;
+  color: var(--glass-ink);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  background: var(--glass-paper);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(150%);
+  transition: border-color 200ms ease, box-shadow 220ms ease, transform 220ms ease, background 220ms ease;
+}
+
+.preview-link-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 42%, rgba(255, 255, 255, 0.16));
+  pointer-events: none;
+}
+
+.preview-link-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.preview-link-card:hover,
+.preview-link-card:focus-visible {
+  color: var(--glass-ink);
+  border-color: rgba(42, 105, 103, 0.48);
+  background: var(--glass-paper-strong);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-6px);
+}
+
+.preview-link-card:focus-visible {
+  outline: 3px solid rgba(246, 207, 126, 0.88);
+  outline-offset: 4px;
+}
+
+.preview-link-card h3 {
+  margin: 0 0 12px;
+  color: var(--glass-ink);
+}
+
+.preview-link-card p {
+  margin: 0;
+  color: #40595f;
+  line-height: 1.65;
+}
+
+.preview-link-card .text-link {
+  margin-top: 22px;
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner {
+  color: var(--glass-ink);
+  border-bottom-color: rgba(242, 201, 107, 0.34);
+  background: linear-gradient(90deg, rgba(47, 48, 38, 0.92), rgba(15, 54, 55, 0.9));
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner__content strong,
+.liquid-glass-page[data-theme="night"] .review-banner__badge,
+.liquid-glass-page[data-theme="night"] .review-chip {
+  color: var(--glass-gold);
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner__content span,
+.liquid-glass-page[data-theme="night"] .preview-link-card p {
+  color: rgba(231, 245, 241, 0.8);
+}
+
+.liquid-glass-page[data-theme="night"] .review-banner__badge,
+.liquid-glass-page[data-theme="night"] .review-chip {
+  border-color: rgba(242, 201, 107, 0.34);
+  background: rgba(8, 27, 31, 0.36);
+}
+
+.liquid-glass-page[data-theme="night"] .preview-links-section {
+  background: rgba(7, 25, 29, var(--glass-section-alpha));
+}
+
+.liquid-glass-page[data-theme="night"] .preview-link-card h3,
+.liquid-glass-page[data-theme="night"] .preview-link-card {
+  color: var(--glass-ink);
+}
+
+@media (min-width: 981px) {
+  .liquid-glass-page .service-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .review-banner,
+  .preview-links-section {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .review-banner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .preview-link-grid {
+    grid-template-columns: 1fr;
+  }
+}
